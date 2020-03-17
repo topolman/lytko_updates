@@ -5,6 +5,7 @@ import routes from "../routes";
 import {connect} from "react-redux";
 
 import Container from '@material-ui/core/Container';
+import {makeStyles} from '@material-ui/core/styles';
 
 import Header from './header';
 import Footer from './footer';
@@ -12,8 +13,14 @@ import Page404 from '../containers/page404';
 import Page500 from '../containers/page500';
 //const DefaultAside = React.lazy(() => import('./DefaultAside'));
 
-const DefaultLayout = (props) => {
+const useStyles = makeStyles(theme => ({
+    container: {
+        backgroundColor: '#2f2f2f',
+    }
+}));
 
+const DefaultLayout = (props) => {
+    const classes = useStyles();
     const content =
         <article>
             <Switch>
@@ -43,7 +50,7 @@ const DefaultLayout = (props) => {
             </Switch>
         </article>;
     return (
-        <Container fluid>
+        <Container className={classes.container} maxWidth="lg">
             <Header history={props.history} />
             {content}
             <Footer />
