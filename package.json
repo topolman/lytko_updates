@@ -19,6 +19,7 @@
     "moment-timezone": "^0.5.28",
     "node-sass": "^4.13.1",
     "react": "^16.13.0",
+    "react-app-polyfill": "^1.0.6",
     "react-dom": "^16.13.0",
     "react-redux": "^7.2.0",
     "react-router": "^5.1.2",
@@ -33,7 +34,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build:parcel": "parcel build index.html"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -49,5 +51,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "parcel": "^2.0.0-alpha.3.2"
   }
 }
